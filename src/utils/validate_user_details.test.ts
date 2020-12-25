@@ -17,7 +17,7 @@ const UserDetailsTwo = {
   middleName: 'Robert',
   familyName: 'Smith',
   licenceNumber: '94977000',
-  stateOfIssue: 'QLD',
+  stateOfIssue: 'GIGI',
   expiryDate: '2020-01-01',
 }
 
