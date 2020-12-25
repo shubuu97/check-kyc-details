@@ -3,12 +3,18 @@ import dotenv from 'dotenv'
 import axios, { AxiosResponse, AxiosError } from 'axios'
 
 /** Internal Dependencies */
+import validateKYCDetails from '../../../utils/validate_user_details'
 import { UserDetailsInterface } from '../../../types'
 
 dotenv.config()
 
 const CheckKYC = (userDetails: UserDetailsInterface): Promise<any> => {
+  const { isValid, errorMessages } = validateKYCDetails(userDetails)
+
   return new Promise((resolve, reject) => {
+    if (!isValid) {
+      reject(errorMessages)
+    }
     axios({
       method: 'POST',
       baseURL: process.env.BASE_URL,

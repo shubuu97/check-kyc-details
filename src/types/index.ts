@@ -15,3 +15,8 @@ export interface ValidationRulesInterface {
   oneOf?: string[],
   date?: boolean
 }
+
+export interface ValidateUserDetailsInterface {
+  isValid: boolean,
+  errorMessages: string[]
+}
