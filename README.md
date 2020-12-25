@@ -17,8 +17,8 @@ that when the user types the license number in the input field it validates it o
 # Running Locally
 
 ```
-git clone change-url
-cd check-kyc
+git clone https://github.com/shubuu97/check-kyc-details.git
+cd check-kyc-details
 ```
 
 Note- Create a .env file at the root of the project and copy the content from 
