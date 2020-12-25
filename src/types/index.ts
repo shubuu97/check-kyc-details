@@ -20,3 +20,11 @@ export interface ValidateUserDetailsInterface {
   isValid: boolean,
   errorMessages: string[]
 }
+
+export interface CheckKYCAPIResponseInterface {
+  verificationDocumentResult: { 
+    type: string 
+  };
+  verificationRequestNumber: number;
+  verificationResultCode: string;
+}

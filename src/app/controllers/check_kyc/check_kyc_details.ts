@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import axios, { AxiosResponse, AxiosError } from 'axios'
 
 /** Internal Dependencies */
+import getResult from './get_result'
 import validateKYCDetails from '../../../utils/validate_user_details'
 import { UserDetailsInterface } from '../../../types'
 
@@ -29,7 +30,8 @@ const CheckKYC = (userDetails: UserDetailsInterface): Promise<any> => {
       if (status !== 200) {
         throw new Error('Something went wrong!')
       }
-      resolve(data)
+      const result = getResult(data)
+      resolve(result)
     }).catch((error: AxiosError) => {
       reject(error)
     })
